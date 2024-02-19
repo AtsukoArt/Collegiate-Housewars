@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block step-counter %}
+<div class="steps-form">
+    <div class="steps-row setup-panel">
+        <div class="steps-step">
+            <button name="wizard_goto_step" class="btn btn-primary btn-circle" type="submit" value="user">1</button>
+            <p>Student Info</p>
+        </div>
+        <div class="steps-step">
+            <button name="wizard_goto_step" class="btn btn-secondary btn-circle" type="disabled"
+                value="activity">2</button>
+            <p>Activity Signup</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    {{ wizard.management_form }}
+
+    <label for="name" class="form-label">Name:</label>
+    <div class="row mb-3" id="name">
+        <div class="col">
+            {{ form.first_name }}
+        </div>
+        <div class="col">
+            {{ form.last_name }}
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        {{ form.email }}
+    </div>
+    <div class="mb-3">
+        <label for="grade" class="form-label">Grade:</label>
+        {{ form.grade }}
+    </div>
+    <div class="mb-3">
+        <label for="house" class="form-label">House:</label>
+        {{ form.house }}
+    </div>
+
+    <div class="form-group d-flex justify-content-center">
+        <input id='submit' class="btn btn-outline-primary btn-100" type="submit" value="Submit" />
+    </div>
+</form>
+{% endblock %}

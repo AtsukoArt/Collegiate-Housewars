@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.media.js }}
+
+    {{ form.as_p }}
+
+    <div class="form-group d-flex justify-content-center">
+        <input id='submit' class="btn btn-outline-primary btn-100" type="submit" value="Submit" />
+    </div>
+</form>
+{% endblock %}
