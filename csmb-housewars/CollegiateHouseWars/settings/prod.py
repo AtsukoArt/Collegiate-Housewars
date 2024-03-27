@@ -8,6 +8,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'csmb-housewars.c4patino.com',
+    'csmb-housewars-retry-6c149c421256.herokuapp.com',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
