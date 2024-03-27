@@ -13,6 +13,7 @@ ALLOWED_HOSTS = [
 
 CSRF_TRUSTED_ORIGINS = [
     'https://csmb-housewars.c4patino.com',
+    'https://csmb-housewars-retry-6c149c421256.herokuapp.com'
 ]
 
 DATABASES = {
